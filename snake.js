@@ -2,6 +2,7 @@ const gameBoard = document.querySelector("#gameBoard");
 const ctx = gameBoard.getContext("2d");
 const scoreText = document.querySelector("#scoreText");
 const resetBtn = document.querySelector("#resetBtn")
+
 const gameWidth = gameBoard.width;
 const gameHeight = gameBoard.height;
 const boardBackground = "white";
@@ -27,6 +28,7 @@ window.addEventListener("keydown",changeDirection);
 resetBtn.addEventListener("click",resetGame);
 
 gameStart()
+
 
 function gameStart(){
     running = true;
@@ -91,7 +93,6 @@ function changeDirection(event){
     const UP = 38
     const RIGHT = 39
     const DOWN = 40
-
     const goingUp =(yVelocity == -unitSize);
     const goingDown = (yVelocity == unitSize);
     const goingRight = (xVelocity == unitSize);
@@ -158,3 +159,29 @@ function resetGame(){
     gameStart()
 }
 
+function changeDir(clicked_id){
+    const id = clicked_id
+    const goingUp =(yVelocity == -unitSize);
+    const goingDown = (yVelocity == unitSize);
+    const goingRight = (xVelocity == unitSize);
+    const goingLeft = (xVelocity == -unitSize);
+    switch(true){
+        case(id == "left" && !goingRight):
+            xVelocity = -unitSize;
+            yVelocity = 0
+            break;
+        case(id == "up" && !goingDown):
+            xVelocity = 0;
+            yVelocity = -unitSize
+            break;
+        case(id == "right" && !goingLeft):
+            xVelocity = unitSize;
+            yVelocity = 0
+            break;
+        case(id == "down" && !goingUp):
+            xVelocity = 0;
+            yVelocity = unitSize;
+            break;
+    }
+        
+}

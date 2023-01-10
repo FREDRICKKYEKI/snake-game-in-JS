@@ -7,6 +7,9 @@
 #scoreText{
     /* font-family: "Permanent Marker", cursive; */
     font-size: 50px;
+    width: 100vw;
+    position: absolute;
+    top: 60%;
 }
 #resetBtn{
     /* font-family: "Permanent Marker", cursive; */
@@ -31,6 +34,7 @@
     position: relative;
     margin-right: auto;
     margin-left: auto;
+
   }
   
   #left{
