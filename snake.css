@@ -33,8 +33,6 @@
     background-color: rgba(128, 128, 128, 0.308);
     color:white;
     position: relative;
-    
-
   }
   .btn{
     height: 5rem;
@@ -67,4 +65,8 @@
     left:50%;
     transform:translateX(-50%);
   }
- 
+ @media screen and (min-width:500px){
+  #rotateMode{
+    display: none;
+  }
+ }
